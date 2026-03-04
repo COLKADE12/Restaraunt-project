@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded',() => {
         return;
     }
 
+    
+
     const alertBox = document.getElementById("alertBox");
 
     alertBox.textContent =`
