@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Flame</title>
+    <link rel="shortcut icon" href="faviconlogo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!--Header/Navbar-->
+    <header class="header">
+        <div class="navBar">
+            <a href="#" class="logo">Urban🔥<span>Flames</span></a>
+
+            <!-- CSS-only menu toggle -->
+            <button  id="menu-toggle" class="hamburger" aria-label="Toggle Menu"> 
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav-links" id="nav-menu">
+                <a href="#hero" class="navBtn home-active">Home</a>
+                <a href="#about" class="navBtn about-active">About</a>
+                <a href="#map" class="navBtn map-active">Location</a>
+                <a href="menu.html" class="navBtn">Menu</a>
+                <a href="reservation.html" class="navBtn">Reservation</a>
+            </nav>
+        </div>
+    </header>
+
+    <main> 
+
+        <!--Hero section-->
+        <section id="hero">
+            <div class="hero-grid grid">
+                <div class="hero-text">
+                     <p class="badge">Modern • Street-Style • Grill • Youthful</p>
+                    <h2 class="heading"><span>Where </span>Flavour Meets <span>Fire</span></h2>
+                    <p>Experience the art of fire-kissed flavours,slow-smoked with patience and
+                       grilled to mouthwatering perfection</p>
+                
+                    <div class="hero-actions">
+                        <a href="menu.html" class="btn">View menu</a>
+                        <a href="reservation.html" class="btn heroBtn">Reserve Table</a>
+                    </div>
+                    <div class="hero-reviews">
+                        <div class="highlight">
+                           <h3>50+</h3>
+                           <p>Dishes</p>
+                        </div>
+                        <div class="highlight">
+                           <h3>5.0★</h3>
+                           <p>Reviews</p>
+                        </div>
+                        <div class="highlight">
+                           <h3>8AM-10PM</h3>
+                           <p>Daily</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.pexels.com/photos/792027/pexels-photo-792027.jpeg" alt="Delicacy" >
+                </div>
+            </div>
+        </section>
+
+       
+
+        <!--About section-->
+        <section id="about">
+            <h1 class="section-head">About Us</h1>
+            <div class="about-grid grid">
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/4508641/pexels-photo-4508641.jpeg" alt="Restaraunt arrangement">
+                </div>
+                <div class="about-text">
+                    <div class="text-about">
+                        <h1>Born From Fire</h1>
+                        <h3>Where bold flavour meets open flame cooking</h3>
+                        <p>Urban Flames is a modern grill restaurant inspired 
+                           by the energy of the city and the power of open fire.
+                           We specialize in flame-grilled dishes crafted with 
+                           bold spices, fresh ingredients, and a passion for 
+                           unforgettable taste. Whether you’re stopping by 
+                           for a quick bite or sharing a meal with friends, 
+                           Urban Flames delivers flavor you can feel.
+                        </p>   
+                    </div>
+                    <div class="icon-about grid">
+                        <div class="icon">
+                            <h4>🔥 Flame-Grilled Fresh</h4>
+                            <p>Meals prepared daily over open flames for rich, smoky flavor.</p>
+                        </div>
+                        <div class="icon">
+                            <h4>👨‍🍳 Skilled Chefs</h4>
+                            <p>Every dish is crafted with precision, passion, and care.</p>
+                        </div>
+                        <div class="icon">
+                            <h4>🏙️ Urban Atmosphere</h4>
+                            <p>A bold, modern space designed for great food and great moments.</p>
+                        </div>
+                        <div class="icon">
+                            <h4>🍽️ Bold Flavors</h4>
+                            <p>Signature spices and flame-kissed techniques that make every bite unforgettable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section id="map">
+    <div id="map"></div>
+    </section>
+    <footer class="footer">
+        <div class="footer-info">
+            <div class="info-block">
+                <h4>Location</h4>
+                <p>Nairobi, Kenya</p>
+            </div>
+            <div class="info-block">
+                <h4>Contact</h4>
+                <p>Phone: +254 748874504<br>
+                   Email: urbanflame@gmail.com
+                </p>   
+            </div>
+            <div class="info-block">
+                <h4>Opening hours</h4>
+                <p>
+                    Mon-Fri: 10am-10pm <br>
+                    Sat-Sun: 9am-11pm
+                </p>
+            </div>
+        </div>
+        <p class="copyright">
+            © 2026 Urban Flames. All rights reserved.
+        </p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB6ENoQaEYWR7uDJeWXhdv9VmXGwQdR0s&callback=initMap" async defer></script>
+</body>
+</html>

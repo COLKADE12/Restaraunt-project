@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="faviconlogo.jpg" type="image/x-icon">
+</head>
+<body>
+
+
+    <header class="header">
+        <div class=" navBar">
+            <a href="index.html" class="logo">Urban🔥<span>Flames</span></a>
+
+            <!-- CSS-only menu toggle -->
+            <button  id="menu-toggle" class="hamburger" aria-label="Toggle Menu"> 
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav-links" id="nav-menu">
+                <a href="index.html" class="navBtn home-active">Home</a>
+                <a href="index.html#about" class="navBtn about-active">About</a>
+                <a href="index.html#map" class="navBtn map-active">Location</a>
+                <a href="menu.html" class="navBtn">Menu</a>
+                <a href="reservation.html" class="navBtn menu-btn">Reservation</a>
+                
+            </nav>
+        </div>
+    </header>
+
+
+
+    <section class="reservation">
+        <div class="reserve-grid">
+            <div class="reserve-image">
+                <img src="https://images.pexels.com/photos/16251530/pexels-photo-16251530.jpeg" alt="reservation sign">
+            </div>
+                <h1 class="section-head ">RESERVE YOUR TABLE</h1>
+            <form class="form">
+                <div class="guest-credentials reservation-container">
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input id="name" type="text"  pattern="[A-Za-z ]+" title="Please fill in official name" placeholder="First name" class="input-field" autocomplete="one-time-code" required>
+                        </div>
+                        <div class="field">
+                           <label for="surname">Surname</label>
+                           <input id="surname" type="text" pattern="[A-Za-z ]+" title="Please fill in official name" placeholder="Last Name" class="input-field" autocomplete="one-time-code" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="field">
+                           <label for="email">Email</label> 
+                           <input id="email" type="text" pattern="[a-z @ .]+" title="Input small letters only" placeholder="example@gmail.com" class="input-field" autocomplete="one-time-code" required>
+                        </div>
+                        <div class="field">
+                           <label for="phone">Phone</label>
+                           <input id="phone" type="tel" pattern="[0-9 +]*" title="Phone number must be valid digits only" placeholder="Enter valid phone number" class="input-field" autocomplete="one-time-code" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="date-time res">
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="date">Reservation Date</label>
+                            <input id="date" type="date" class="input-field" required>
+                        </div>
+                        <div class="field">
+                            <label for="time">Reservation Time</label>
+                            <input id="time" type="time" class="input-field" required>
+                        </div>
+                        <div class="field">
+                            <label for="people">Number of guests</label>
+                            <select id="people" class="input-field">
+                                <option value="">Select</option>
+                                <option>1 person</option>
+                                <option>2 people</option>
+                                <option>3 people</option>
+                                <option>4 people</option>
+                                <option>5+ people</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="messages">Special Request</label>
+                    <textarea id="messages" class="textarea-field" rows="5" placeholder="Any special request or allergies?"></textarea>
+                    <p id="alertBox"></p>
+                    <button type="submit" class="btn reserveBtn">Reserve Table</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-info">
+            <div class="info-block">
+                <h4>Location</h4>
+                <p>Nairobi, Kenya</p>
+            </div>
+            <div class="info-block">
+                <h4>Contact</h4>
+                <p>Phone: +254 748874504<br>
+                   Email: urbanflame@gmail.com
+                </p>   
+            </div>
+            <div class="info-block">
+                <h4>Opening hours</h4>
+                <p>
+                    Mon-Fri: 10am-10pm <br>
+                    Sat-Sun: 9am-11pm
+                </p>
+            </div>
+        </div>
+        <p class="copyright">
+            © 2026 Urban Flames. All rights reserved.
+        </p>
+    </footer>
+<script src="index.js"></script>    
+</body>
+</html>
