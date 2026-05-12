@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded',() => {
 });
 
 function initMap() {
-      const location = { lat: -0.358731, lng: 35.277746 };
+      const location = { lat: -0.369354, lng: 35.283897 };
 
       const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 13,
