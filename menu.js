@@ -58,8 +58,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
         });
 
         totalElement.textContent=total;
+
     };
 
+    function clearCart() {
+        cart=[]
+
+       cartItems.innerHTML="";
+    };
+
+    document.querySelector(".clearBtn").addEventListener("click", clearCart);
+
+
+        
 
     const MenuToggle= document.getElementById("menu-toggle");
     const navMenu= document.getElementById("nav-menu");
