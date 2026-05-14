@@ -292,7 +292,6 @@ html{
 .cart-window{
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
     position: fixed;
     top: 0;
     right: 50%;
@@ -304,6 +303,10 @@ html{
     background-color: #36363b;
     transition: 0.3s;
     z-index: 60;
+}
+.cart-items{
+    overflow-y: auto;
+    height: 100%;
 }
 .cart-header{
     display: flex;
@@ -338,12 +341,14 @@ html{
     justify-content: space-between;
 }
 .clearBtn{
-    background-color: #ff6e34;
+    background-color:crimson;
     padding: 7px;
     border-radius: 10px;
-    color: #1f1f22;
+    color: #b8b6b0;
     cursor: pointer;
     border: none;
+    width: 100%;
+    margin-left: 10px;
 }
 .clearBtn:hover{
     color: #eaeaea;
@@ -432,6 +437,25 @@ html{
 .removeBtn button:hover{
     background-color: #e05b75;
     transition: 0.25s;
+}
+.cart-footer{
+    margin-top: 15px;
+}
+.cart-footer p{
+    display: flex;
+    background-color: #ff6e34;
+    padding: 10px;
+    border-radius: 5px;
+    gap: 3px;
+    color: #1f1f22;
+    font-size: 1.3em;
+    width: 150px;
+}
+.emptyCart{
+    color: #ff4b03;
+    font-size: 1.9em;
+    margin: 50% 0 50% 0;
+    margin-left: 25%;
 }
 
 /*------------------

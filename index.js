@@ -48,9 +48,21 @@ document.addEventListener('DOMContentLoaded',() => {
     const navMenu= document.getElementById("nav-menu")
     const navLinks= document.querySelectorAll("#nav-menu a")
 
-    MenuToggle.addEventListener('click' , () =>{
+    MenuToggle.addEventListener('click' , (e) =>{
+        e.stopPropagation();
          navMenu.classList.toggle('active');
  });
+
+ document.addEventListener('click', (e) => {
+
+    const clickedInsideMenu = navMenu.contains(e.target);
+    const clickedToggle = MenuToggle.contains(e.target);
+
+    if(!clickedInsideMenu && !clickedToggle){
+        navMenu.classList.remove('active');
+    }
+
+});
 
     navLinks.forEach(link => {
        link.addEventListener('click', () => {

@@ -55,6 +55,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
         const cartItems = document.querySelector(".cart-items");
         const totalElement = document.querySelector(".total");
 
+        if(cart.length === 0){
+        cartItems.innerHTML = `
+            <div class="emptyCart">
+                Your cart is empty!!
+            </div>
+        `;
+        return;
+        }
+
         cartItems.innerHTML = "";
         let total = 0;
 
@@ -86,6 +95,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         totalElement.textContent=total;
 
     };
+
     function updateCartCount(){
     count = cart.reduce((sum, item) => sum + item.quantity, 0);
 
@@ -139,15 +149,25 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     const MenuToggle= document.getElementById("menu-toggle");
     const navMenu= document.getElementById("nav-menu");
-    const navLink = document.querySelector(".nav-link")
 
-    MenuToggle.addEventListener('click' , () =>{
+    MenuToggle.addEventListener('click' , (e) =>{
+        e.stopPropagation();
         navMenu.classList.toggle('active');
     });
 
-    navLink.addEventListener('click', () =>{
-        navMenu.classList.remove("active");
-    });
+    document.addEventListener('click', (e) => {
 
+    const clickedInsideMenu = navMenu.contains(e.target);
+    const clickedToggle = MenuToggle.contains(e.target);
+
+    if(!clickedInsideMenu && !clickedToggle){
+        navMenu.classList.remove('active');
+    }
+
+});
+
+   
+
+    displayCart();
 });
     
