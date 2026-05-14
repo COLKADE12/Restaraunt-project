@@ -251,6 +251,10 @@ html{
     border: 1px solid #36363b;
     overflow: hidden;
 }
+.menu-card:hover{
+    transform: scale(1.03);
+    transition: 0.25s;
+}
 .card-heading{
     color: #ff4b03;
     margin-left: 10px;
@@ -288,6 +292,7 @@ html{
 .cart-window{
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
     position: fixed;
     top: 0;
     right: 50%;
@@ -308,6 +313,7 @@ html{
 }
 .cart-header h3{
     color: #ff4b03;
+    font-size: 1.2em;
 }
 .closeCart{
     background-color: inherit;
@@ -315,6 +321,7 @@ html{
     border: none;
     cursor: pointer;
     transition: 0.25s;
+    font-size: 1.12em;
 }
 .closeCart:hover{
     color: #ff4b03;
@@ -331,7 +338,6 @@ html{
     justify-content: space-between;
 }
 .clearBtn{
-    display: none;
     background-color: #ff6e34;
     padding: 7px;
     border-radius: 10px;
@@ -370,9 +376,63 @@ html{
     color: #1f1f22;
     background-color: #ff4b03;
     border-radius: 50%;
-    height: 15px;
-    width: 15px;
-}    
+    height: 20px;
+    width: 20px;
+}
+.cart-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f1f22;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}  
+.item-detail{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.item-detail h3{
+    color: #ff6e34;
+}
+.item-detail p{
+    color: #b8b6b0;
+    font-size: 1.1em;
+}
+.quantity-controls{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.quantity-controls p{
+    color: #ff4b03;
+}
+.quantity-controls button{
+    width: 30px;
+    height: 30px;
+    background-color: #28282B;
+    color: #ff6e34;
+    font-size: 1.05em;
+    border: none;
+    border-radius: 5px;
+}
+.quantity-controls button:hover{
+    color: #eaeaea;
+    background-color: #36363b;
+    transition: 0.25s;
+}
+.removeBtn button{
+    background-color: crimson;
+    color: #eaeaea;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+.removeBtn button:hover{
+    background-color: #e05b75;
+    transition: 0.25s;
+}
 
 /*------------------
       Mobile

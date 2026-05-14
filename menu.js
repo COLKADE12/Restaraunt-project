@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", ()=>{
+    
 
 
     const addToCart = document.querySelectorAll(".menuBtn");
@@ -15,8 +16,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
          const name = card.querySelector(".card-heading h3").textContent;
          const priceText = card.querySelector(".price p").textContent;
          const price = parseInt(priceText.replace("Ksh","").replace(",",""))
+         const existingItem = cart.find(item => item.name === name);
 
-         cart.push({name , price});
+         if(existingItem){
+            existingItem.quantity++;
+         }else{
+            cart.push({name , price , quantity: 1});
+         };
 
          displayCart();
 
@@ -34,14 +40,16 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const overlay = document.querySelector(".overlay");
 
     cartBtn.addEventListener('click', () =>{
-        cartWindow.classList.add("active")
-        overlay.classList.add("active")
+        cartWindow.classList.add("active");
+        overlay.classList.add("active");
+        document.body.style.overflow = "hidden"
     });
 
     closeCart.addEventListener('click', () =>{
         cartWindow.classList.remove("active");
         overlay.classList.remove("active");
-    })
+        document.body.style.overflow = "auto"
+    });
 
     function displayCart() {
         const cartItems = document.querySelector(".cart-items");
@@ -50,24 +58,81 @@ document.addEventListener("DOMContentLoaded", ()=>{
         cartItems.innerHTML = "";
         let total = 0;
 
-        cart.forEach(item => {
+        cart.forEach((item, index) => {
+
+            total +=item.price * item.quantity
+
             cartItems.innerHTML += `
-            <p>${item.name} - Ksh ${item.price}</p>
+
+            <div class="cart-item">
+                <div class="item-detail">
+                    <h3>${item.name}</h3>
+                    <p> Ksh ${item.price}</p>
+                    <div class="quantity-controls">
+                        <p>Quantity: </p>
+                        <button onclick="decreaseItems(${index})"> - </button>
+                        <span>${item.quantity}</span>
+                        <button onclick="increaseItems(${index})"> + </button>
+                    </div>
+                </div>
+                <div class="removeBtn">
+                    <button onclick="removeItem(${index})">REMOVE</button>
+                </div>
+            </div>
             `;
-            total += Number(item.price);
+            
         });
 
         totalElement.textContent=total;
 
     };
+    function updateCartCount(){
+    count = cart.reduce((sum, item) => sum + item.quantity, 0);
 
-    function clearCart() {
-        cart=[]
-
-       cartItems.innerHTML="";
+    if(count > 0){
+        itemNumber.style.display = "block";
+        itemNumber.textContent = count;
+    } else {
+        itemNumber.style.display = "none";
+        itemNumber.textContent = 0;
+    };
     };
 
-    document.querySelector(".clearBtn").addEventListener("click", clearCart);
+
+    window.increaseItems = function(index){
+        cart[index].quantity++
+
+        updateCartCount();
+        displayCart();
+    };
+
+    window.decreaseItems = function(index){
+        if(cart[index].quantity > 1){
+            cart[index].quantity--;
+        }else{
+            cart.splice(index, 1);
+        };
+
+        updateCartCount();
+        displayCart();
+    };
+
+    window.removeItem = function(index){
+        cart.splice(index, 1);
+
+        updateCartCount();
+        displayCart();
+    };
+
+    window.clearCart = function() {
+        cart=[]
+        count=0
+        itemNumber.style.display = "none"
+
+        displayCart();
+    };
+
+    
 
 
         
@@ -84,5 +149,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
         navMenu.classList.remove("active");
     });
 
-
-});    
+});
+    
