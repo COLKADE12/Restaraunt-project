@@ -558,6 +558,15 @@ label{
     color: #b8b6b0;
     padding: 7px;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0px 1000px #36363b inset;
+    -webkit-text-fill-color: #b8b6b0;
+    transition: background-color 5000s ease-in-out 0s;
+}
 .textarea-field{
     background-color: #36363b;
     color: #b8b6b0;
