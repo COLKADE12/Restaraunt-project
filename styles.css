@@ -22,7 +22,8 @@ section{
     scroll-margin-top: 90px;
 }
 .light-background{
-    background-color: #4241413a;
+    background-color: #4241413d;
+    margin-top: 0 ;
 }
 /*------------------
    smooth scrolling
@@ -301,8 +302,9 @@ html{
     padding: 15px;
     border-radius: 20px;
     background-color: #36363b;
-    transition: 0.3s;
+    transition: 0.9s ease;
     z-index: 60;
+    opacity: 0;
 }
 .cart-items{
     overflow-y: auto;
@@ -334,6 +336,7 @@ html{
 }
 .cart-window.active{
     transform: translateY(0);
+    opacity: 1;
 }
 .cart-footer{
     margin-top: auto;
@@ -473,7 +476,7 @@ html{
     display: flex;
     background-color: #ff6e34;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     gap: 3px;
     color: #1f1f22;
     font-size: 1.3em;
@@ -484,6 +487,27 @@ html{
     font-size: 1.9em;
     margin: 50% 0 50% 0;
     margin-left: 25%;
+}
+.toast{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    width: 30%;
+    background-color: #36363b;
+    color: greenyellow;
+    padding: 10px;
+    border-radius: 10px;
+    transform: translateX(500px);
+    transition: 0.7s ease;
+    font-size: 1.1em;
+    font-weight: 500;
+    opacity: 0;
+
+}
+.toast.show{
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /*------------------
@@ -497,6 +521,10 @@ html{
         width: 100%;
         border-radius: 0;
         
+    }
+    .toast{
+        width: 90%;
+       
     }
 }
 
@@ -516,6 +544,9 @@ html{
         width: 100%;
         border-radius: 0;
     }
+    .toast{
+        width: 80%;
+    }
 }
 
 /*------------------
@@ -530,6 +561,9 @@ html{
         top: 0;
         right: 30%;
         width: 500px;
+    }
+    .toast{
+        width: 30%;
     }
 }
 

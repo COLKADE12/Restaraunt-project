@@ -153,12 +153,22 @@ document.addEventListener("DOMContentLoaded", ()=>{
     };
 
     window.orderFood = function(){
-        alert("Thank you for choosing Urban Flames Restaraunt.We will be in touch to confirm shipment.");
+
+        const toast = document.querySelector(".toast");
+
         cart=[]
+        cartWindow.classList.remove("active");
+        document.body.style.overflow = "auto";
+        toast.classList.add("show");
+
+        setTimeout(() =>{
+            toast.classList.remove("show");
+            overlay.classList.remove("active");
+        }, 4000);
 
         displayCart();
         updateCartCount();
-    }
+    };
 
     
 
