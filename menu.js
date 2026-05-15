@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 Your cart is empty!!
             </div>
         `;
+        totalElement.textContent = "0"
         return;
         }
 
@@ -136,11 +137,18 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     window.clearCart = function() {
         cart=[]
-        count=0
-        itemNumber.style.display = "none"
 
         displayCart();
+        updateCartCount();
     };
+
+    window.orderFood = function(){
+        alert("Thank you for choosing Urban Flames Restaraunt.We will be in touch to confirm shipment.");
+        cart=[]
+
+        displayCart();
+        updateCartCount();
+    }
 
     
 

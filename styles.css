@@ -355,6 +355,15 @@ html{
     transform: translateY(-2px);
     transition: 0.25s;
 }
+.orderBtn{
+    background-color: #adff2f;
+    color: #b8b6b0;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    margin-left: 10px;
+}
 .cart-image{
     width: 40px;
 }
