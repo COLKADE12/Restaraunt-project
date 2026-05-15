@@ -355,14 +355,33 @@ html{
     transform: translateY(-2px);
     transition: 0.25s;
 }
+.clearBtn:disabled{
+    background-color: #b8b6b0;
+    color: #eaeaea;
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
 .orderBtn{
-    background-color: #adff2f;
-    color: #b8b6b0;
+    background-color: #7da540;
+    color: #fff;
     border-radius: 10px;
     cursor: pointer;
     border: none;
     width: 100%;
     margin-left: 10px;
+}
+.orderBtn:hover{
+    background-color: greenyellow;
+    transform: translateY(-2px);
+    transition: 0.25s;
+}
+.orderBtn:disabled{
+    background-color: #b8b6b0;
+    color: #eaeaea;
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
 }
 .cart-image{
     width: 40px;

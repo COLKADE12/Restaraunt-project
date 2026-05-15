@@ -54,6 +54,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     function displayCart() {
         const cartItems = document.querySelector(".cart-items");
         const totalElement = document.querySelector(".total");
+        const orderBtn = document.querySelector(".orderBtn");
+        const clearBtn = document.querySelector(".clearBtn");
 
         if(cart.length === 0){
         cartItems.innerHTML = `
@@ -62,7 +64,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
             </div>
         `;
         totalElement.textContent = "0"
+
+        orderBtn.disabled = true
+        clearBtn.disabled = true
+
         return;
+        }else{
+            orderBtn.disabled = false
+            clearBtn.disabled = false
+
         }
 
         cartItems.innerHTML = "";
